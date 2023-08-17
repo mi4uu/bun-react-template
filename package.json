@@ -1,0 +1,35 @@
+{
+  "name": "@mi4uu/bun-react-template",
+  "version": "0.1.99",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "web-vitals": "^3.0.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@types/web": "^0.0.99",
+    "bun-lightningcss": "^0.1.0",
+    "bun-types": "^0.7.3",
+    "dprint": "^0.40.2",
+    "react-refresh": "0.10.0",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "dev": "bun --hot run dev.tsx",
+    "format": "dprint fmt --config dprint.json",
+    "build": "bun run build:bun",
+    "build:bun": "bun run build:bun:prod",
+    "build:bun:dev": "bun build src/index.tsx --outdir=./dist/dev --target=browser --sourcemap=external",
+    "build:bun:prod": "bun build src/index.tsx --outdir=./dist/prod --target=browser --sourcemap=external --minify",
+    "build:ts": "bun -b run tsc --build ./tsconfig.dev.json",
+    "build:all": "bun run build:ts; bun run build:bun:dev; bun run build:bun:prod "
+  },
+  "type": "module"
+}

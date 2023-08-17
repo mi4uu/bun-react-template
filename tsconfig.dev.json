@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/tsc.dev",
+    "skipLibCheck": true,
+    "composite": true,
+    "declaration": true
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./src/tsconfig.json"
+    }
+  ],
+  "$schema": "https://json.schemastore.org/tsconfig"
+}

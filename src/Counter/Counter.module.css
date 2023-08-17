@@ -1,0 +1,26 @@
+.Counter {
+  border: 0.0625rem solid #fff3;
+  border-radius: 0.7rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  box-shadow: 0.5rem 0.5rem 1.5rem #42445a;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  min-inline-size: 18.75rem;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: all 0.5s ease;
+  transition: background-color 1s;
+
+  background-color: #00000044;
+
+}
+.negative {
+  background-color:red;
+}
+.positive {
+  background-color:green;
+}

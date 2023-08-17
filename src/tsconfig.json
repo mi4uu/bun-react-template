@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.base.json",
+  "files": ["./reportWebVitals.js"],
+  "include": ["./*.ts", "./*.tsx"],
+  "references": [
+    {
+      "path": "./Counter/tsconfig.json"
+    }
+  ],
+  "$schema": "https://json.schemastore.org/tsconfig"
+}

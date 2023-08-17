@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "outDir": "dist/ts.d",
+    "skipLibCheck": true
+  },
+  "files": ["./dev.tsx"],
+  "references": [
+    {
+      "path": "./tsconfig.dev.json"
+    }
+  ],
+
+  "$schema": "https://json.schemastore.org/tsconfig"
+}
