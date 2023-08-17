@@ -1,7 +1,7 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "dist/tsc",
+    "outDir": "../dist/tsc-tests",
     "lib": ["ESNext", "DOM"],
     "module": "esnext",
     "target": "esnext",
@@ -23,8 +23,7 @@
       "@types/web"
     ]
   },
-  "files": ["./index.d.ts"],
-  "include": [],
-  "exclude": ["**/*.test.*"],
+  "include": ["../src/**/*.test.*","../src/*.test.*","../src/**/*.tsx","../src/*.ts","../src/*.js"],
+  "exclude": [],
   "$schema": "https://json.schemastore.org/tsconfig"
 }

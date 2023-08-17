@@ -1,0 +1,3 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App 1`] = `"<article><img alt="logo" src="/bunlogo.svg"><div></div><h3>Welcome to Bun!</h3><div></div><a href="https://bun.sh/docs" target="_blank" rel="noopener noreferrer">Read the docs →</a><div data-testid="counter" class=""><a>-</a><b>0</b><a>+</a></div></article>"`;

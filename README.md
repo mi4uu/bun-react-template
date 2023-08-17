@@ -11,6 +11,8 @@ react boilerplate project using bun and typescript configured:
 - module css support included
 - formater configured
 - example code provided for all of above
+- vscode configured including automated  tasks
+- chrome debug configured for vscode
 
 Run the following commands to get started.
 

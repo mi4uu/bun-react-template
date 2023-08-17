@@ -21,19 +21,23 @@
     "chalk": "^5.3.0",
     "dprint": "^0.40.2",
     "react-refresh": "0.10.0",
+    "rimraf": "^5.0.1",
     "terminal-link": "^3.0.0",
     "typescript": "latest"
   },
   "scripts": {
     "dev": "bun --hot run dev.ts",
-    "test": "bun test",
+    "test": "bun run clean; bun test src/**/*.test.* src/*.test.*",
+    "test:watch": "bun run clean; bun test --watch src/**/*.test.* src/*.test.*",
     "format": "dprint fmt --config dprint.json",
+    "watch": "bun run clean; bun tsc --build ./tsconfig.json --watch",
     "build": "bun run build:bun",
     "build:bun": "bun run build:bun:prod",
     "build:bun:dev": "bun -b ./build.ts dev",
     "build:bun:prod": "bun -b ./build.ts prod",
     "build:ts": "bun -b run tsc --build ./tsconfig.dev.json",
-    "build:all": "bun run build:ts; bun run build:bun:dev; bun run build:bun:prod "
+    "build:all": "bun run clean; bun run build:ts; bun run build:bun:dev; bun run build:bun:prod ",
+    "clean":"rimraf dist"
   },
   "type": "module"
 }

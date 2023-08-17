@@ -1,14 +1,20 @@
 {
   "extends": "./tsconfig.base.json",
+  "compileOnSave": true,
   "compilerOptions": {
     "emitDeclarationOnly": true,
     "outDir": "dist/ts.d",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "incremental": true,
+    "sourceMap": true
   },
   "files": ["dev.ts", "./build.ts"],
   "references": [
     {
       "path": "./tsconfig.dev.json"
+    },
+    {
+      "path": "./tests/tsconfig.test.json"
     }
   ],
 

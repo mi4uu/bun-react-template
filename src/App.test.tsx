@@ -5,6 +5,7 @@ import { act } from 'react-dom/test-utils'
 
 import assert from 'assert'
 import { App } from './App'
+import React from 'react'
 
 let container : HTMLDivElement | null = null
 beforeEach( () => {
@@ -22,13 +23,13 @@ afterEach( () => {
 } )
 
 test('App', () => {
-  assert( container )
   act( () => {
     createRoot( container! ).render( <App /> )
   } )
 
-  expect( container?.children[0].className ).toBe( 'App' )
+ expect( container?.children[0].innerHTML ).toMatchSnapshot()
+ assert( container )
 
-  const article = container.querySelector( 'article' )
-  expect( article?.className ).toBe( 'App-article' )
+  const article = container!.querySelector( 'article' )
+  expect( article?.children.length ).toBe( 6 )
 })

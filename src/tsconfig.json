@@ -1,7 +1,7 @@
 {
   "extends": "../tsconfig.base.json",
-  "files": ["./reportWebVitals.js"],
-  "include": ["./*.ts", "./*.tsx"],
+  "include": ["./*.ts", "./*.tsx", "./*.css", "./*.js"],
+  
   "references": [
     {
       "path": "./Counter/tsconfig.json"
