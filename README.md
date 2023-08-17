@@ -1,5 +1,17 @@
 # React Bun App
 
+## whats inside:
+
+- react boilerplate project configured:
+
+* dev server - refresh page on change
+* build (bun in few flavors)
+* tests
+* typescript with composite on
+* module css support included
+* formater configured
+* example code provided for all of above
+
 This is a single-page application project template using React and [Bun](https://bun.sh/). Run the following commands to get started.
 
 ```sh
@@ -23,3 +35,47 @@ This bundles `src/index.tsx` and starts a development server that serves from th
 - This file renders the React component in `src/App.tsx` inside the `div#root` element. The app is now ready to accept user input.
 
 Start building your app by editing `src/App.tsx`.
+
+### test
+
+```sh
+bun run test
+```
+
+### build
+
+```sh
+bun run build
+```
+
+same as build:bun:prod
+
+```sh
+bun run build:bun:dev
+```
+
+build bundle without minification
+
+```sh
+bun run build:bun:prod
+```
+
+build production bundle
+
+```sh
+bun run build:ts
+```
+
+build using typescript --build, using bun to boost typescript execution
+
+```sh
+bun run build:all
+```
+
+run all builds - no idea why, but you can xD
+
+```sh
+bun run format
+```
+
+format sources using dprint
