@@ -2,20 +2,20 @@
 
 ## whats inside:
 
-- react boilerplate project configured:
+react boilerplate project using bun and typescript configured:
 
-* dev server - refresh page on change
-* build (bun in few flavors)
-* tests
-* typescript with composite on
-* module css support included
-* formater configured
-* example code provided for all of above
+- dev server - refresh page on change
+- build (bun in few flavors)
+- tests
+- typescript with composite on
+- module css support included
+- formater configured
+- example code provided for all of above
 
-This is a single-page application project template using React and [Bun](https://bun.sh/). Run the following commands to get started.
+Run the following commands to get started.
 
 ```sh
-bun create react ./react-bun-app
+bun create https://github.com/mi4uu/bun-react-template ./react-bun-app
 cd react-bun-app
 ```
 
