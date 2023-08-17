@@ -14,7 +14,7 @@ export const Counter = () => {
     classNames.push( styles.positive )
   }
   return (
-    <div className={ classNames.join( ' ' ) }>
+    <div data-testid={ 'counter' } className={ classNames.join( ' ' ) }>
       <ActionButton onClick={ decreaseCounter } text={ '-' } />
       <b>
         { count }

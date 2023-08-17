@@ -12,22 +12,26 @@
     ]
   },
   "devDependencies": {
+    "@happy-dom/global-registrator": "^10.10.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/web": "^0.0.99",
     "bun-lightningcss": "^0.1.0",
     "bun-types": "^0.7.3",
+    "chalk": "^5.3.0",
     "dprint": "^0.40.2",
     "react-refresh": "0.10.0",
+    "terminal-link": "^3.0.0",
     "typescript": "latest"
   },
   "scripts": {
-    "dev": "bun --hot run dev.tsx",
+    "dev": "bun --hot run dev.ts",
+    "test": "bun test",
     "format": "dprint fmt --config dprint.json",
     "build": "bun run build:bun",
     "build:bun": "bun run build:bun:prod",
-    "build:bun:dev": "bun build src/index.tsx --outdir=./dist/dev --target=browser --sourcemap=external",
-    "build:bun:prod": "bun build src/index.tsx --outdir=./dist/prod --target=browser --sourcemap=external --minify",
+    "build:bun:dev": "bun -b ./build.ts dev",
+    "build:bun:prod": "bun -b ./build.ts prod",
     "build:ts": "bun -b run tsc --build ./tsconfig.dev.json",
     "build:all": "bun run build:ts; bun run build:bun:dev; bun run build:bun:prod "
   },

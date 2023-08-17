@@ -1,0 +1,5 @@
+logLevel = "debug" # "debug", "warn", "error"
+preload = ""
+[test]
+preload = "./tests/setup.ts"
+# Set Bun's log level

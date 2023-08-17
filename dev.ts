@@ -1,9 +1,10 @@
+import chalk from 'chalk'
 import * as path from 'path'
 
-import type { BuildConfig, Serve, ServeOptions, ServerWebSocket } from 'bun'
-import lightningcss from 'bun-lightningcss'
+import type { Serve, ServerWebSocket } from 'bun'
 import { statSync } from 'fs'
-import * as entryPoint from './src/'
+import { build } from './build'
+import * as entryPoint from './src'
 
 declare global {
   var count : number
@@ -12,7 +13,8 @@ declare global {
 }
 
 globalThis.count ??= 0
-console.log( `Reloaded ${globalThis.count} times` )
+console.log( `Reloaded ${chalk.magenta.bold.underline( globalThis.count )} times` )
+console.log( '' )
 globalThis.count++
 if ( globalThis.ws && globalThis.updateHash ) {
   globalThis.ws.send( JSON.stringify( { updateCount: globalThis.count, updateHash: globalThis.updateHash } ) )
@@ -93,22 +95,18 @@ export default {
       return undefined
     }
     let reqPath = new URL( request.url ).pathname
-    console.log( `::FETCH::\t${reqPath.padEnd( 30, ' ' )}--------------` )
+    console.log( `${chalk.white.bgGreen.bold( '::FETCH::' )}\t${reqPath.padEnd( 30, ' ' )}${
+      chalk
+        .white
+        .bgGreen
+        .bold( ':::::::::' )
+    }` )
     if ( reqPath === '/' ) {
       reqPath = '/index.html'
     }
 
     if ( reqPath === '/index.js' ) {
-      const result = await Bun.build(
-        {
-          entrypoints: [ './src/index.tsx' ],
-          target: 'browser',
-          format: 'esm',
-          sourcemap: 'inline',
-          splitting: false,
-          plugins: [ lightningcss() ],
-        } satisfies BuildConfig,
-      )
+      const result = await build()
       const artifact = result.outputs[0]
       globalThis.updateHash = artifact.hash
 
@@ -127,13 +125,12 @@ export default {
       if ( !ws ) {
         throw Error( 'ws is null' )
       }
-      console.log( 'server open' )
       globalThis.ws = ws
     },
     async message( ws, message ) {
       if ( message === JOIN_RELOAD_MSG ) {
         // just log import so bun wont ignore this import
-        console.log( 'joined', entryPoint )
+        console.log( '', chalk.bgBlackBright.gray.bgBlack( JSON.stringify( entryPoint ) ) )
       }
     },
     close( ws ) {

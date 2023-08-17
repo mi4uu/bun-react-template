@@ -21,7 +21,7 @@
       "@types/web"
     ]
   },
-  "files": [],
-  "include": ["./*.d.ts"],
+  "files": ["./index.d.ts"],
+  "include": [],
   "$schema": "https://json.schemastore.org/tsconfig"
 }
